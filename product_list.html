@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Remix Icon -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Boxicons -->
+  <link
+    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Swiper CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/products.css" />
+
+  <title>Singku Coffee</title>
+</head>
+<body>
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav container flex">
+    <!-- Logo -->
+    <a href="feature_page.html" class="logo-content flex">
+      <i class="ri-cup-fill logo-icon"></i>
+      <span class="logo-text">SINGKU</span>
+    </a>
+
+    <!-- Menu + Mobile -->
+    <div class="menu-content">
+      <ul class="menu-list flex">
+        <li><a href="feature_page.html" class="nav-link">Features</a></li>
+        <li><a href="product_list.html" class="nav-link">Products</a></li>
+        <li><a href="contact_page.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="media-icons flex">
+        <a href="#"><i class="ri-facebook-fill"></i></a>
+        <a href="#"><i class="ri-twitter-fill"></i></a>
+        <a href="#"><i class="ri-instagram-fill"></i></a>
+      </div>
+
+      <i class="bx bx-x navClose-btn"></i>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-content">
+      <input 
+        type="text" 
+        id="searchInput" 
+        placeholder="Find your brew..." 
+        class="search-bar"
+      />
+      <button class="search-btn">
+        <i class="ri-search-line"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Open Button -->
+    <i class="bx bx-menu navOpen-btn"></i>
+  </nav>
+
+  <!-- ========== PRODUCTS ========== -->
+  <section id="products">
+      <h2>Menu</h2>
+      <div class="product-grid" id="productGrid">
+          <div class="product-card" data-name="Black Cloud Panucha">
+              <img src="images/menuimg1.png" alt="Black Cloud Panucha" />
+              <h3>Black CLoud Panucha</h3>
+              <p>₱179 | 1 cup</p>
+              <button onclick="addToCart('Black Cloud Panucha', 179)">Add to Cart</button>
+          </div>
+          <div class="product-card" data-name="Sea Salt Latte">
+              <img src="images/menuimg2.png" alt="Sea Salt Latte" />
+              <h3>Sea Salt Latte</h3>
+              <p>₱180 | 1 cup</p>
+              <button onclick="addToCart('Sea Salt Latte', 180)">Add to Cart</button>
+          </div>
+          <div class="product-card" data-name="Turtle Mocha">
+              <img src="images/menuimg3.png" alt="Turtle Mocha" />
+              <h3>Turtle Mocha</h3>
+              <p>₱180 | 1 cup</p>
+              <button onclick="addToCart('Turtle Mocha', 180)">Add to Cart</button>
+          </div>
+          <div class="product-card" data-name="Oreo Foam">
+              <img src="images/menuimg4.png" alt="Oreo Foam" />
+              <h3>Oreo Foam</h3>
+              <p>₱170 | 1 cup</p>
+              <button onclick="addToCart('Oreo Foam', 170)">Add to Cart</button>
+          </div>
+          <div class="product-card" data-name="Matcha">
+              <img src="images/menuimg5.png" alt="Matcha" />
+              <h3>Matcha</h3>
+              <p>₱145 | 1 cup</p>
+              <button onclick="addToCart('Matcha', 145)">Add to Cart</button>
+          </div>
+          <div class="product-card" data-name="Fried Chicken Cutlet">
+              <img src="images/specialimg3.png" alt="Fried Chicken Cutlet" />
+              <h3>Fried Chicken Cutlet</h3>
+              <p>₱200 | 1 plating</p>
+              <button onclick="addToCart('Fried Chicken Cutlet', 200)">Add to Cart</button>
+          </div>
+          <div class="product-card" data-name="Pork Sisig">
+              <img src="images/menuimg8.png" alt="Pork Sisig" />
+              <h3>Pork Sisig</h3>
+              <p>₱250 | 1 plating</p>
+              <button onclick="addToCart('Pork Sisig', 250)">Add to Cart</button>
+          </div>
+          <div class="product-card" data-name="Cheesy Hotdog">
+              <img src="images/menuimg9.png" alt="Cheesy Hotdog" />
+              <h3>Cheesy Hotdog</h3>
+              <p>₱180 | 1 plating</p>
+              <button onclick="addToCart('Cheesy Hotdog', 180)">Add to Cart</button>
+          </div>
+          <div class="product-card" data-name="Patty Melt">
+              <img src="images/specialimg4.png" alt="Patty Melt" />
+              <h3>Patty Melt</h3>
+              <p>₱250 | 1 plating</p>
+              <button onclick="addToCart('Patty Melt', 250)">Add to Cart</button>
+          </div>
+          <div class="product-card" data-name="Tuna Melt">
+              <img src="images/menuimg11.png" alt="Tuna Melt" />
+              <h3>Tuna Melt</h3>
+              <p>₱200 | 1 plating</p>
+              <button onclick="addToCart('Tuna Melt', 200)">Add to Cart</button>
+          </div>
+        </div>
+
+      <!-- CART & RECEIPT -->
+      <div class="cart-section">
+          <h3>Your Cart (<span id="cartCount">0</span>)</h3>
+          <ul id="cartItems"></ul>
+
+          <div class="receipt-center">
+              <h4>Send Receipt</h4>
+              <input type="email" id="userEmail" placeholder="Enter recipient email" />
+              <button class="send-btn" onclick="sendReceipt()">Email Receipt via Gmail</button>
+          </div>
+      </div>
+  </section>
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="contact">
+    <div class="section-container footer-container">
+      <!-- Column 1 -->
+      <div class="footer-col">
+        <div class="logo footer-logo">
+          <a href="#"><span>SINGKU</span></a>
+        </div>
+        <p class="section-description">
+          “Discover the true taste of Singku — where each brew is a journey and every blend is made to perfection.”
+        </p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="feature_page.html">Feature</a></li>
+          <li><a href="product_list.html">Products</a></li>
+          <li><a href="contact_page.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-col">
+        <h4>Social Media</h4>
+        <ul class="footer-links">
+          <li><a href="https://www.instagram.com/singku.cafe/?g=5">Instagram</a></li>
+          <li><a href="https://www.facebook.com/singku.cafe/">Facebook</a></li>
+          <li><a href="https://l.messenger.com/l.php?u=https%3A%2F%2Fwww.tiktok.com%2F%40singku.cafe%3F_t%3DZS-8zUM1yBY2B0%26_r%3D1&h=AT3d3RD_Bq6hiQlg08YbdJKXQfpxeH7l1kdHGMo29lx-JK3VMOl_XKy8VnRAfZSf3HSlOEXzAVzQzga8dchZfBDRJzssbsvOUf9uAJLFnNcWkJS0vWLAm0sJk693ulT0SlzlIA">TikTok</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4 -->
+      <div class="footer-col">
+        <h4>Location</h4>
+        <ul class="footer-links">
+          <li><a href="#">5G Building, Nepomuceno Street,</a></li>
+          <li><a href="#">Barangay Santo Rosario, Angeles City,</a></li>
+          <li><a href="#">Pampanga</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      © 2025 Singku Coffee Shop. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

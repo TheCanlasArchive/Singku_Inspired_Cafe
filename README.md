@@ -1,1 +1,1 @@
-# Singku_Inspired_Cafe
+# MidtermProj_Major-Pages
